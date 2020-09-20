@@ -23,6 +23,7 @@
 
 #include <linux/videodev2.h>
 
+#include <stdbool.h>
 #include <va/va_backend.h>
 #include "vaapi_compat.h"
 #include "vdpau_gate.h"
@@ -102,6 +103,7 @@ struct vdpau_driver_data {
     uint64_t                    va_display_attrs_mtime[VDPAU_MAX_DISPLAY_ATTRIBUTES];
     unsigned int                va_display_attrs_count;
     char                        va_vendor[256];
+    bool			x_fallback;
 };
 
 typedef struct object_config   *object_config_p;
